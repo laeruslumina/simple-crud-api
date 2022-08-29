@@ -2,16 +2,17 @@ package com.dummy.app.rest.service;
 
 import com.dummy.app.rest.models.User;
 import com.dummy.app.rest.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Service
-
+@RequiredArgsConstructor
 public class ApiServiceImplementation implements ApiService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     public List<User> getUsers(){
